@@ -12,6 +12,11 @@ const JobSchema = new mongoose.Schema(
       required: [true, "Please provide position"],
       maxlength: 100,
     },
+    status: {
+      type: String,
+      enum: ["interview", "declined", "pending"],
+      default: "pending",
+    },
     createdBy: {
       type: mongoose.Types.ObjectId,
       ref: "User",
@@ -33,8 +38,13 @@ const JobSchema = new mongoose.Schema(
       default: "mid-level",
       required: true,
     },
-    compensation: {
-      type: Number,
+    jobId: {
+      type: mongoose.Types.ObjectId,
+      ref: "Job",
+      required: [true, "Please provide Job"],
+    },
+    attachment: {
+      type: String,
       required: false,
     },
   },
