@@ -20,7 +20,7 @@ const JobSchema = new mongoose.Schema(
     jobType: {
       type: String,
       enum: ["full-time", "part-time", "remote", "internship"],
-      default: "full-time",
+      default: "remote",
     },
     jobLocation: {
       type: String,
@@ -31,6 +31,11 @@ const JobSchema = new mongoose.Schema(
       type: String,
       enum: ["internship", "assistant", "junior", "mid-level", "senior"],
       default: "mid-level",
+      required: true,
+    },
+    description: {
+      type: String,
+      default: "",
       required: true,
     },
     compensation: {

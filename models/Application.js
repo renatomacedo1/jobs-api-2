@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// Feature under development and not implemented yet
 const JobSchema = new mongoose.Schema(
   {
     company: {
